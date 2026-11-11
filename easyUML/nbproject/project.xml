@@ -1,83 +1,340 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://www.netbeans.org/ns/project/1">
-    <type>org.netbeans.modules.apisupport.project</type>
-    <configuration>
-        <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
-            <code-name-base>easyuml</code-name-base>
-            <suite-component/>
-            <module-dependencies>
-                <dependency>
-                    <code-name-base>com.github.javaparser</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.1</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.dom4j</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.explorer</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.filetype</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.model</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.newcode</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.project</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.1</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.reveng</code-name-base>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.uml.visual</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-            </module-dependencies>
-            <public-packages/>
-        </data>
-    </configuration>
+  <type>org.netbeans.modules.apisupport.project</type>
+  <configuration>
+    <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
+      <code-name-base>easyuml</code-name-base>
+      <suite-component />
+      <module-dependencies>
+        <dependency>
+          <code-name-base>org.netbeans.api.annotations.common</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.24.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.api.java</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.18</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.api.templates</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>1.7.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.api.visual</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>2.43.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.core.multiview</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.40.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.modules.java.project</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.62</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.modules.projectapi</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.60.2</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.modules.projectuiapi</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.78.1.8</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.modules.projectuiapi.base</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.83.1.9</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.modules.settings</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.45.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.spi.navigator</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.33.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.netbeans.spi.palette</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <release-version>1</release-version>
+            <specification-version>1.42.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.actions</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>6.35.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.awt</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>7.62.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.dialogs</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>7.38.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.explorer</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>6.57.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.filesystems</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>8.12.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.filesystems.compat8</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>9.9.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.filesystems.nb</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>9.9.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.loaders</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>7.57.2</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.modules</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>7.37</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.nodes</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>7.39.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.text</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>6.62.2</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.util</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>8.39.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.util.lookup</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>8.25.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.util.ui</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>9.6.1</specification-version>
+          </run-dependency>
+        </dependency>
+        <dependency>
+          <code-name-base>org.openide.windows</code-name-base>
+          <build-prerequisite />
+          <compile-dependency />
+          <run-dependency>
+            <specification-version>6.71.1</specification-version>
+          </run-dependency>
+        </dependency>
+      </module-dependencies>
+      <public-packages>
+        <package>com.github.javaparser</package>
+        <package>com.github.javaparser.ast</package>
+        <package>com.github.javaparser.ast.body</package>
+        <package>com.github.javaparser.ast.comments</package>
+        <package>com.github.javaparser.ast.expr</package>
+        <package>com.github.javaparser.ast.internal</package>
+        <package>com.github.javaparser.ast.stmt</package>
+        <package>com.github.javaparser.ast.type</package>
+        <package>com.github.javaparser.ast.visitor</package>
+        <package>org.dom4j</package>
+        <package>org.dom4j.bean</package>
+        <package>org.dom4j.datatype</package>
+        <package>org.dom4j.dom</package>
+        <package>org.dom4j.dtd</package>
+        <package>org.dom4j.io</package>
+        <package>org.dom4j.jaxb</package>
+        <package>org.dom4j.rule</package>
+        <package>org.dom4j.rule.pattern</package>
+        <package>org.dom4j.swing</package>
+        <package>org.dom4j.tree</package>
+        <package>org.dom4j.util</package>
+        <package>org.dom4j.xpath</package>
+        <package>org.dom4j.xpp</package>
+        <package>org.uml.explorer</package>
+        <package>org.uml.filetype.cdg</package>
+        <package>org.uml.filetype.cdg.renaming</package>
+        <package>org.uml.filetype.cdg.wizard</package>
+        <package>org.uml.jung</package>
+        <package>org.uml.memberparser</package>
+        <package>org.uml.model</package>
+        <package>org.uml.model.components</package>
+        <package>org.uml.model.members</package>
+        <package>org.uml.model.relations</package>
+        <package>org.uml.newcode</package>
+        <package>org.uml.newcode.components</package>
+        <package>org.uml.newcode.members</package>
+        <package>org.uml.project</package>
+        <package>org.uml.visual</package>
+        <package>org.uml.visual.dialogs</package>
+        <package>org.uml.visual.palette</package>
+        <package>org.uml.visual.widgets</package>
+        <package>org.uml.visual.widgets.actions</package>
+        <package>org.uml.visual.widgets.anchors</package>
+        <package>org.uml.visual.widgets.components</package>
+        <package>org.uml.visual.widgets.members</package>
+        <package>org.uml.visual.widgets.providers</package>
+        <package>org.uml.xmlDeserialization</package>
+        <package>org.uml.xmlSerialization</package>
+      </public-packages>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/dom4j-2.1.5.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/dom4j-2.1.5.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-svg/jsvg-1.7.1.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-svg/jsvg-1.7.1.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/commons-logging-1.4.0.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/commons-logging-1.4.0.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/fontbox-3.0.8.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/fontbox-3.0.8.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/graphics2d-3.0.5.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/graphics2d-3.0.5.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/pdfbox-3.0.8.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/pdfbox-3.0.8.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/pdfbox-io-3.0.8.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/pdfbox-io-3.0.8.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/freehep-graphics2d-2.4.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/freehep-graphics2d-2.4.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/freehep-graphicsbase-2.4.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/freehep-graphicsbase-2.4.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/freehep-graphicsio-2.4.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/freehep-graphicsio-2.4.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/freehep-graphicsio-svg-2.4.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/freehep-graphicsio-svg-2.4.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/easyuml-export/freehep-io-2.2.2.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/easyuml-export/freehep-io-2.2.2.jar</binary-origin>
+      </class-path-extension>
+      <class-path-extension>
+        <runtime-relative-path>ext/easyuml-single/javaparser-core-2.2.2.jar</runtime-relative-path>
+        <binary-origin>build/nbm-release/modules/ext/easyuml-single/javaparser-core-2.2.2.jar</binary-origin>
+      </class-path-extension>
+    </data>
+  </configuration>
 </project>

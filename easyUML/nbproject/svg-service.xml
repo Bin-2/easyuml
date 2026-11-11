@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="easyuml-svg-service">
+    <!-- Main sources compile against 8.2. This service is queried only on
+         hosts with SVGLoader (Utilities UI 9.15+). It stays in the same JAR. -->
+    <target name="compile-svg-service" depends="init" extensionOf="-post-compile">
+        <javac srcdir="svg-service/src" destdir="${build.classes.dir}" release="8"
+               encoding="UTF-8" includeantruntime="false" debug="true">
+            <classpath>
+                <pathelement location="${harness.dir}/../platform/lib/org-openide-util-ui.jar"/>
+                <pathelement location="${harness.dir}/../platform/lib/org-openide-util-lookup.jar"/>
+                <pathelement location="${build.classes.dir}"/>
+                <pathelement location="${svg.renderer.jar}"/>
+            </classpath>
+            <compilerarg value="-proc:none"/>
+        </javac>
+        <copy todir="${build.classes.dir}">
+            <fileset dir="svg-service" includes="META-INF/services/**"/>
+        </copy>
+    </target>
+</project>

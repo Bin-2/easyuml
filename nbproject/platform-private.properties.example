@@ -1,0 +1,9 @@
+# Copy this file to nbproject/private/platform-private.properties for IDE builds.
+# Adjust these paths to your installed build tools; use forward slashes.
+# build.ps1 parameters override the corresponding Ant settings.
+netbeans.build.home=C:/Program Files/NetBeans-24/netbeans
+nbjdk.home=C:/Program Files/Java/jdk-21
+
+# Optional external NetBeans 8.2 API baseline, independent of __working.
+# Uncomment and adjust for IDE builds in a shared checkout.
+#nbplatform.active.dir=C:/path/to/netbeans-8.2/netbeans

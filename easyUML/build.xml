@@ -3,6 +3,33 @@
 <!-- for some information on what you could do (e.g. targets to override). -->
 <!-- If you delete this file and reopen the project it will be recreated. -->
 <project name="easyuml" default="netbeans" basedir=".">
-    <description>Builds, tests, and runs the project easyuml.</description>
+    <description>Builds the easyUML plugin module.</description>
     <import file="nbproject/build-impl.xml"/>
+    <import file="nbproject/maven-dependencies.xml"/>
+    <property name="svg.renderer.jar" location="${release.dir}/modules/ext/easyuml-single/easyuml-svg/jsvg-1.7.1.jar"/>
+    <import file="nbproject/svg-service.xml"/>
+    <!-- Prepare the class path and release files before the harness scans them. -->
+    <target name="init" depends="resolve-dependencies,harness.init"/>
+    <target name="prepare-release" depends="resolve-dependencies" extensionOf="-pre-release"/>
+    <!-- Include the optional service in the normal incremental-build inputs. -->
+    <target name="up-to-date" depends="init">
+        <uptodate targetfile="${cluster}/${module.jar}" property="is.jar.uptodate">
+            <srcfiles dir="${src.dir}"/>
+            <srcfiles dir="svg-service"/>
+            <srcfiles dir="nbproject" includes="project.xml,project.properties,maven-dependencies.xml,svg-service.xml"/>
+            <srcfiles dir="." includes="manifest.mf,build.xml"/>
+            <srcresources><path refid="cp"/></srcresources>
+        </uptodate>
+    </target>
+    <!-- The harness adds these files before signing and catalog generation. -->
+    <target name="-init-extra.nbm.files" depends="init">
+        <mkdir dir="${build.dir}/nbm-main"/>
+        <javac srcdir="installer/src" destdir="${build.dir}/nbm-main" release="8"
+               encoding="UTF-8" includeantruntime="false" debug="true">
+            <compilerarg value="-proc:none"/>
+            <compilerarg value="-Xlint:all"/>
+        </javac>
+        <copy file="installer/main.properties" todir="${build.dir}/nbm-main"/>
+        <zipfileset dir="${build.dir}/nbm-main" prefix="main" id="extra.nbm.files"/>
+    </target>
 </project>

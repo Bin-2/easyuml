@@ -1,0 +1,11 @@
+FreeHEP Vector Graphics 2.4 and FreeHEP IO 2.2.2
+Copyright FreeHEP and the individual contributors named in the source files.
+Project: https://github.com/freehep/freehep-vectorgraphics
+IO project: https://github.com/freehep/freehep-io
+
+The published Maven POMs list Apache License 2.0 and LGPL 2.1.
+These unmodified binaries are distributed under the Apache License 2.0 option.
+The Apache license and the corresponding upstream source JARs are supplied here;
+source JARs retain all individual copyright attributions. No FreeHEP sources were modified.
+The SVG writer and its four supporting libraries are private UMLVisual libraries.
+FreeHEP test/UI driver dependencies are not required by the direct SVG export path.

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="easyuml-maven-dependencies" basedir=".." default="resolve-dependencies"
+         xmlns:unless="ant:unless">
+    <property name="release.dir" location="build/nbm-release"/>
+
+    <macrodef name="central-jar">
+        <attribute name="path"/>
+        <attribute name="dir"/>
+        <attribute name="sha256"/>
+        <sequential>
+            <local name="artifact.name"/>
+            <local name="artifact.file"/>
+            <local name="artifact.valid"/>
+            <local name="artifact.download"/>
+            <basename property="artifact.name" file="@{path}"/>
+            <property name="artifact.file" location="${release.dir}/@{dir}/${artifact.name}"/>
+            <condition property="artifact.valid">
+                <and>
+                    <available file="${artifact.file}" type="file"/>
+                    <checksum file="${artifact.file}" algorithm="SHA-256" property="@{sha256}"/>
+                </and>
+            </condition>
+            <sequential unless:set="artifact.valid">
+                <mkdir dir="${release.dir}/@{dir}"/>
+                <!-- Verify the download before replacing the cached artifact. -->
+                <tempfile property="artifact.download" destdir="${basedir}/build"
+                          prefix="central-" suffix=".part" createfile="true" deleteonexit="true"/>
+                <get src="https://repo.maven.apache.org/maven2/@{path}" dest="${artifact.download}"
+                     maxtime="90" retries="2"/>
+                <fail message="SHA-256 mismatch for Maven Central artifact @{path}">
+                    <condition>
+                        <not>
+                            <checksum file="${artifact.download}" algorithm="SHA-256" property="@{sha256}"/>
+                        </not>
+                    </condition>
+                </fail>
+                <move file="${artifact.download}" tofile="${artifact.file}" overwrite="true"/>
+            </sequential>
+        </sequential>
+    </macrodef>
+
+    <!-- The icon generation helper needs only JSVG. -->
+    <target name="resolve-jsvg">
+        <central-jar path="com/github/weisj/jsvg/1.7.1/jsvg-1.7.1.jar"
+                     dir="modules/ext/easyuml-single/easyuml-svg"
+                     sha256="b68e541ace91ad17f098859395db256c4618363c7b7781517fac860f2a0014c4"/>
+    </target>
+
+    <target name="resolve-dependencies" depends="resolve-jsvg">
+        <copy todir="${release.dir}">
+            <fileset dir="release" excludes="**/*.jar"/>
+        </copy>
+
+        <central-jar path="org/dom4j/dom4j/2.1.5/dom4j-2.1.5.jar"
+                     dir="modules/ext/easyuml-single"
+                     sha256="c45367e490d6c818d4c990bf9682e7766822d66324b6087e14d50e940383fa75"/>
+        <central-jar path="com/github/javaparser/javaparser-core/2.2.2/javaparser-core-2.2.2.jar"
+                     dir="modules/ext/easyuml-single"
+                     sha256="d68380c2d9e36dacb71e96e8e78810e9c68015dfa4737e236a824b788b863533"/>
+        <central-jar path="commons-logging/commons-logging/1.4.0/commons-logging-1.4.0.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="d175dbd751dd782a63bde28c7a039520e971f25e84b79c19b8435edc3603e0dc"/>
+        <central-jar path="org/apache/pdfbox/fontbox/3.0.8/fontbox-3.0.8.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="a1915c24e3edbe0ecec93896dfbf6d41427810b663ade97bd4e8bae86ec3fdab"/>
+        <central-jar path="org/freehep/freehep-graphics2d/2.4/freehep-graphics2d-2.4.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="29e77eafec23aa272c9f2bce91fa0a831d9437f296f981dc6e960e066311f870"/>
+        <central-jar path="org/freehep/freehep-graphicsbase/2.4/freehep-graphicsbase-2.4.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="d3054b9d5e1534ef3a8f189b0cae2d3c85ad51d2f15a6c61ce8a576c1c647713"/>
+        <central-jar path="org/freehep/freehep-graphicsio/2.4/freehep-graphicsio-2.4.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="f5f884c795d4e4175dd05851125a668054627eb5d6facc9b343b31f14bef4a5c"/>
+        <central-jar path="org/freehep/freehep-graphicsio-svg/2.4/freehep-graphicsio-svg-2.4.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="5dd02448fac61fcb2396b874cc807e69123860f3c6ecc5be90eed74f731e642b"/>
+        <central-jar path="org/freehep/freehep-io/2.2.2/freehep-io-2.2.2.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="4c19342a6e7def81f59fb1f13f34c6b25c49c9903404de913f6e06f1f7233911"/>
+        <central-jar path="de/rototor/pdfbox/graphics2d/3.0.5/graphics2d-3.0.5.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="218c6fd7b5c8c010762d7bc84edeef55cf5ee7d9b1f96fe532e8bfca119bbe5e"/>
+        <central-jar path="org/apache/pdfbox/pdfbox/3.0.8/pdfbox-3.0.8.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="97647cfbde61ebcfc06b4cf8c9b0ffcaaee073396eceb4a7f6836a9b9128903c"/>
+        <central-jar path="org/apache/pdfbox/pdfbox-io/3.0.8/pdfbox-io-3.0.8.jar"
+                     dir="modules/ext/easyuml-single/easyuml-export"
+                     sha256="36a0e04001010b4c764857817412b96339930b19755e728959805cc0352061b2"/>
+
+        <!-- Corresponding sources for the libraries already shipped with them. -->
+        <central-jar path="org/freehep/freehep-graphics2d/2.4/freehep-graphics2d-2.4-sources.jar"
+                     dir="docs/easyuml-single/easyuml-export-licenses/freehep-sources"
+                     sha256="8cea652bbd270af5be1364126ef6ecd5557b8def5281bae782e44ac10b35a5fa"/>
+        <central-jar path="org/freehep/freehep-graphicsbase/2.4/freehep-graphicsbase-2.4-sources.jar"
+                     dir="docs/easyuml-single/easyuml-export-licenses/freehep-sources"
+                     sha256="c600257bd02ad5fa4b7fbe07fa0d12156d6344679631b426d6e6dae196b68e9a"/>
+        <central-jar path="org/freehep/freehep-graphicsio/2.4/freehep-graphicsio-2.4-sources.jar"
+                     dir="docs/easyuml-single/easyuml-export-licenses/freehep-sources"
+                     sha256="b7e1623a5e8bc16eec875cd124f8ce937b44f2433244d26160394b3114be5e56"/>
+        <central-jar path="org/freehep/freehep-graphicsio-svg/2.4/freehep-graphicsio-svg-2.4-sources.jar"
+                     dir="docs/easyuml-single/easyuml-export-licenses/freehep-sources"
+                     sha256="e6f4a1bb6f75fe148cb5b251080fd9a83b2a70cb624fbb6d6a40f8890e5b0728"/>
+        <central-jar path="org/freehep/freehep-io/2.2.2/freehep-io-2.2.2-sources.jar"
+                     dir="docs/easyuml-single/easyuml-export-licenses/freehep-sources"
+                     sha256="23a51bf34d0ac7175fc8a84e99609f8b7547786e6bc2c28cb40ea61961879f42"/>
+        <central-jar path="com/github/javaparser/javaparser-core/2.2.2/javaparser-core-2.2.2-sources.jar"
+                     dir="docs/easyuml-single/easyuml-javaparser"
+                     sha256="a0b16d6a986a83e7f5ecfebc7bd262bf7379a5a7c70526f69806d389c5ee53d8"/>
+
+        <!-- Prevent stale JARs from entering a package after a version change. -->
+        <fail message="Unexpected JARs in the generated release tree. Clean and rebuild after changing dependencies.">
+            <condition>
+                <not>
+                    <resourcecount count="19">
+                        <fileset dir="${release.dir}" includes="**/*.jar"/>
+                    </resourcecount>
+                </not>
+            </condition>
+        </fail>
+    </target>
+</project>
